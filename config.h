@@ -1,6 +1,8 @@
 #pragma once
 
 #include <inttypes.h>
+#include <stdlib.h>
+#include <string.h>
 
 #define PRIbyte PRIu8
 #define PRIword PRIu16
@@ -15,7 +17,10 @@ typedef uint8_t byte;
 typedef uint16_t word;
 typedef word address;
 
+extern char X[16];
 extern byte mem[(address)(-1)];
+
+uint16_t x_read_uint16(FILE *);
 
 void b_write(address, byte);
 byte b_read(address);
